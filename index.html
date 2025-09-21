@@ -1,187 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>e-Certificate Verification</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trainee Details</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Top Blue Header */
-    .topbar {
-      background-color: #0056a3;
-      color: white;
-      padding: 8px 16px;
-      font-weight: bold;
-      font-size: 16px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
     }
 
-    /* Navbar Section */
-    .navbar {
-      background-color: #e6f0ff;
+    header {
       display: flex;
+      justify-content: space-around;
       align-items: center;
-      padding: 5px 16px;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
+      background-color: white;
+      padding: 15px;
       flex-wrap: wrap;
-    }
-
-    .nav-item {
-      margin-right: 15px;
-      color: #003366;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .nav-item:hover {
-      text-decoration: underline;
-    }
-
-    .right-links {
-      margin-left: auto;
-      display: flex;
       gap: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .right-links a {
-      color: #003366;
-      font-size: 13px;
-      text-decoration: none;
+    header img {
+      height: 40px;
+      object-fit: contain;
     }
 
-    /* Main Certificate Container */
-    .container {
+    .card {
       max-width: 900px;
-      margin: 20px auto;
-      border: 1px solid #666;
-      box-shadow: 0 0 5px #aaa;
-      padding: 10px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .header {
-      background-color: #0066cc;
-      color: white;
-      padding: 8px;
-      font-size: 18px;
-      font-weight: bold;
-      border: 1px solid #003366;
+    .card h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+      color: #00509e;
     }
 
-    .form-section {
+    .trainee-info {
       display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      align-items: center;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .form-section input,
-    .form-section select {
-      padding: 5px;
+    .photo {
+      flex: 0 0 120px;
+      text-align: center;
+    }
+
+    .photo img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .details {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .details div {
+      background-color: #f9f9f9;
+      padding: 10px 12px;
+      border-radius: 6px;
       font-size: 14px;
-      width: 200px;
     }
 
-    .form-section button {
-      padding: 5px 10px;
-      background-color: #0066cc;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
 
-    .info-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      border: 1px solid #ccc;
-    }
+      .details {
+        grid-template-columns: 1fr;
+      }
 
-    .info-table th {
-      background-color: #007acc;
-      color: white;
-      padding: 8px;
-      text-align: left;
-      font-size: 16px;
-    }
-
-    .info-table td {
-      padding: 8px;
-      border: 1px solid #ccc;
-    }
-
-    .close-btn {
-      margin-top: 10px;
-      padding: 5px 10px;
-      background-color: #007acc;
-      color: white;
-      border: none;
-      cursor: pointer;
+      header {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Header -->
-  <div class="topbar">
-   Ministry of Skill Development And Entrepreneurship
-  </div>
+  <header>
+    <img src="https://www.msde.gov.in/assets/images/msde_logo.png" alt="Government Logo"/>
+    <img src="https://www.skillindiadigital.gov.in/_nuxt/SkillIndiaLogo.8df5e79f.svg" alt="Skill India Logo"/>
+    <img src="https://ncvtmis.gov.in/images/ncvt-logo-new.png" alt="NCVT Logo"/>
+    <img src="https://iti.directory/assets/img/iti-logo.png" alt="ITI Logo"/>
+  </header>
 
-  <!-- Navigation Bar -->
-  <div class="navbar" style="display: flex; justify-content: center; align-items: center;">
-    <a href="#" class="nav-item">Home</a>
-    <a href="#" class="nav-item">Trainee</a>
-    <a href="#" class="nav-item">Institute</a>
-    <a href="#" class="nav-item">Verification</a>
-    <a href="#" class="nav-item">Assessment</a>
-    <a href="#" class="nav-item">Calendar</a>
-    <a href="#" class="nav-item">OTH</a>
-    <a href="#" class="nav-item">Help</a>
+  <main>
+    <section class="card">
+      <h2>Trainee Details</h2>
+      <div class="trainee-info">
+        <div class="photo">
+          <img src="pk pass .jpg" alt="Trainee Photo"/>
+        </div>
+        <div class="details">
+          <div><strong>Roll No: </strong> 0021084521</div>
+          <div><strong>Name:</strong> S Prasanta kumar reddy</div>
+          <div><strong>Father Name:</strong> S Subash reddy</div>
+          <div><strong>Trade Name:</strong> Electrician (NSQF)</div>
+          <div><strong>Trade Code:</strong> 442</div>
+          <div><strong>Date of Birth:</strong> 01-Jan-2004</div>
+          <div><strong>Admission Year:</strong> 2019</div>
+          <div><strong>ITI Name:</strong> Gopabandhu ITC</div>
+          <div><strong>ITI Code:</strong> PU19000083</div>
+          <div><strong>ITI Address:</strong> Kabisurya Nagar, Ganjam, Odisha - 761104</div>
+          <div><strong>Exam Center:</strong> PU21000063 - GOPABANDHU ITC, Kabisurya Nagar</div>
+          <div><strong>Shift:</strong> 2</div>
+          <div><strong>Unit:</strong> 1</div>
+          <div><strong>Certified:</strong> Yes</div>
+          <div><strong>Training Duration:</strong> 2019–2021</div>
+          <div><strong>Certificate Issue Date:</strong> 06-Sep-2021</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="right-links">
-      <a href="#">Login</a>
-      <a href="#">FAQ</a>
-      <a href="#">Sitemap</a>
-    </div>
-  </div>
-
-  <!-- Main Certificate UI -->
-  <div class="container">
-    <div class="header">e-Certificate Verification</div>
-    <div class="form-section">
-      <label>e-Certificate Number:</label>
-      <input type="text" placeholder="Enter Number" />
-      <label>Certificate Type:</label>
-      <select>
-        <option value="">-- Select --</option>
-      </select>
-      <button>🔍</button>
-    </div>
-
-    
-        <table class="info-table">
-            <tr><th colspan="2">Certified Trainee Information</th></tr>
-            <tr><td>Trainee Name</td><td>SAROJ LENKA</td></tr>
-            <tr><td>Father Name</td><td>NIRANJAN LENKA</td></tr>
-            <tr><td>Institute</td><td>GR21000521-Govt. Industrial Training institute,Purushottampur</td></tr>
-            <tr><td>Institute Address</td><td>At-Jagannathpalli,Po-Jagannathpur,GANJAM,ODISHA-761004</td></tr>
-            <tr><td>Trade</td><td>Fitter NSQF</td></tr>
-      
-            <tr><td>Certified</td><td>Yes</td></tr>
-            <tr><td>Training Duration</td><td>Aug 2021 to July 2023</td></tr>
-            <tr><td>Certified</td><td>YES</td></tr>
-            <tr><td>Certificate Issue Date</td><td>19-Aug-2023</td></tr>
-          </table>
-      
-    
-
-    <button class="close-btn">Close</button>
-  </div>
+  <script>
+    // JavaScript section (if needed)
+    // For future dynamic behaviors
+    console.log("Page Loaded");
+  </script>
 
 </body>
 </html>
